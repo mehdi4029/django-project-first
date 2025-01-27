@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'static/templates/loginForm', 'static/templates/sign-in-form', 'static/templates/mainPage' , 'static/templates/user-panel' , 'static/templates/create-post-form-fragment' , 'static/templates/create-category-fragment' , 'static/templates/delete-category-fragment' , 'static/templates/update-category-fragment' , 'static/templates/delete-post-fragment' ,
+            'static\templates\loginForm', 'static/templates/sign-in-form', 'static/templates/mainPage' , 'static/templates/user-panel' , 'static/templates/create-post-form-fragment' , 'static/templates/create-category-fragment' , 'static/templates/delete-category-fragment' , 'static/templates/update-category-fragment' , 'static/templates/delete-post-fragment' ,
             'static/templates/manipulate-post-fragment' , 'static/templates/manipulate-post-form-fragment' , 'static/templates/postDetailView' , 'static/templates/Archive' , 'static/templates/comments-list-fragment' , 'static/templates/search-post-fragment'
         ],
         'APP_DIRS': True,
