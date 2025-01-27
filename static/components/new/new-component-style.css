@@ -1,0 +1,259 @@
+*{
+    margin : 0 ;
+    padding : 0 ;
+    outline : none ;
+    border : none ;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Dana-meduim";
+    src: url("/final/media/fonts/Dana/woff2/DanaFaNum-Medium.woff2");
+}
+@font-face {
+    font-family: "Dana-bold";
+    src: url("/final/media/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2");
+}
+@font-face {
+    font-family: "Dana-regular";
+    src: url("/final/media/fonts/Dana/woff2/DanaFaNum-Regular.woff2");
+}
+@font-face {
+    font-family: "Moraba-medium";
+    src: url("/final/media/fonts/Morabba/woff2/Morabba-Medium.woff2");
+}
+@font-face {
+    font-family: "Moraba-bold";
+    src: url("/final/media/fonts/Morabba/woff2/Morabba-Bold.woff2");
+}
+@font-face {
+    font-family: "Moraba-light";
+    src: url("/final/media/fonts/Morabba/woff2/Morabba-Light.woff2");
+}
+@media only screen and (max-width : 481px){
+    #new {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: white;
+    }
+    #image-section {
+         width: 60%;
+         height: 40%;
+         margin : auto ;
+         margin-top: -20px;
+         border-radius: 20px;
+         border-bottom: 1px solid gray;
+    }
+    #new-title {
+        text-align: center;
+        font-family: "Dana-bold";
+        color : black ;
+        font-size: 12px;
+    }
+    #new-body {
+        display: inline-block;
+        cursor: pointer;
+        font-family: "Dana-regular";
+        color : gray ;
+        font-size: 9px;
+        width: 100%;
+        height: 30%;
+        overflow: hidden;
+        padding: 5px 20px;
+    }
+    #stats {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #date {
+        direction: ltr;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        color : #808080 ;
+    }
+    #creator {
+        width: 150px;
+        display: flex;
+        align-items: center;
+        gap: 3px ;
+    }
+    #creator-name {
+        font-family: "Moraba-medium";
+        font-size : 8px ;
+        color : #808080;
+    }
+    #pencil {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        margin-top: 0;
+        color : #808080 ;
+    }
+    #calendar {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+    }
+    #date-text {
+        font-family: "Moraba-bold";
+        font-size: 9px ;
+    }
+}
+@media only screen and (min-width : 481px){
+#new {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+}
+#image-section {
+     width: 60%;
+     height: 40%;
+     margin : auto ;
+     margin-top: -20px;
+     border-radius: 20px;
+     border-bottom: 1px solid gray;
+}
+#new-title {
+    text-align: center;
+    font-family: "Dana-bold";
+    color : black ;
+    font-size: 16px;
+}
+#new-body {
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Dana-regular";
+    color : gray ;
+    font-size: 11px;
+    width: 100%;
+    height: 40%;
+    padding: 5px 20px;
+    overflow: hidden;
+}
+#stats {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+#date {
+    direction: ltr;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+#creator {
+    width: 150px;
+    display: flex;
+    padding-right: 20px;
+    align-items: center;
+    gap: 7px;
+}
+#creator-name {
+    font-family: "Moraba-medium";
+    font-size: 13px;
+    color : #808080;
+}
+#pencil {
+    width: 17px;
+    height: 17px;
+}
+#calendar {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: -17px;
+}
+#date-text {
+    font-family: "Moraba-bold";
+    font-size: 10px ;
+    color : #808080 ;
+    white-space: pre;
+}
+}
+@media only screen and (min-width : 769px){
+#new {
+    width: 400px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+}
+#image-section {
+     width: 60%;
+     height: 40%;
+     margin : auto ;
+     margin-top: -20px;
+     border-radius: 20px;
+     border-bottom: 1px solid gray;
+}
+#new-title {
+    text-align: center;
+    font-family: "Dana-bold";
+    color : black ;
+    font-size: 22px;
+}
+#new-body {
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Dana-regular";
+    color : gray ;
+    font-size: 14px;
+    width: 100%;
+    height: 40%;
+    padding: 5px 20px;
+}
+#stats {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+#date {
+    direction: ltr;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#creator {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#creator-name {
+    font-family: "Moraba-medium";
+    font-size: 13px;
+    color : black;
+}
+#pencil {
+    width: 20px;
+    height: 20px;
+}
+#calendar {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+}
+#date-text {
+    font-family: "Moraba-bold";
+    font-size: 11px ;
+    color : #808080
+}
+}

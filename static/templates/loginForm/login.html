@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'templates/loginForm/login-form-style.css' %}" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form method="post" action="/blog/form-validation/" class="register-form input" style="display: inline-block">
+              {% csrf_token %}
+            <input name="username" type="text" id="name-input" class="name-input input" placeholder="name" required/>
+            <input name="password" id="password-input" type="password" class="password-input input" placeholder="password" required/>
+            <input name="email" id="email-input" type="email" class="email-input input" placeholder="email address" required/>
+            <input id="submit-btn" type="submit" class="submit-button">
+            <p class="message">
+              DON't have an account? <a href="sign-in/">sign in</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+</body>
+</html>

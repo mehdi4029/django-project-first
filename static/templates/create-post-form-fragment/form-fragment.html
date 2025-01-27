@@ -1,0 +1,19 @@
+<form enctype="multipart/form-data" action="/blog/createPost" method="post" id="create-post-form">
+    {% csrf_token %}
+    <input placeholder="عنوان پست ..." name="title" id="post-title" type="text" maxlength="200">
+    <textarea placeholder="متن پست ..." name="body" id="post-body" max-length = "100000"></textarea>
+     <select name="selectedCat">
+          {% for i in categories %}
+              <option>{{ i.name }}</option>
+          {% endfor %}
+     </select>
+    <input placeholder="تاریخ انتشار  (اختیاری جهت انتشار پست در آینده)" name="date" class="datepick" type="text">
+    <select name="status">
+         <option>پیش نویس</option>
+         <option>پخش در همین لحطه(در صورت خالی بودن تاریخ انتشار)</option>
+    </select>
+     <label style="display: inline" for="is_important">این خبر مهم است؟</label>
+     <input name="is_important" type="radio">
+    <input name="img" type="file">
+    <button>ایجاد پست</button>
+</form>

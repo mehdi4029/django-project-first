@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Archive</title>
+    <link rel="stylesheet" href="{% static 'templates/Archive/Archive.css' %}">
+</head>
+<body>
+
+        <div class="container">
+             {% for i in myPosts %}
+                   <new-section>
+                                   <img id="new-image" src="{{ i.image.url }}" slot="new-image">
+                                   <a style="text-decoration: none ; color : #808080" href="/blog/detailView/{{ i.id }}" data-id="{{ i.id }}" slot="new-body" class="new-body" id="new-body">{{ i.description }} ...</a>
+                                   <h5 id="new-title" slot="new-title">{{ i.title }}</h5>
+                                   <span class="date-text" id="date-text" slot="date">{{ i.getJdateTime }}</span>
+                                   <span id="writer-name" slot="writer-name">{{ i.author.username }}</span>
+
+                   </new-section>
+             {% endfor %}
+        </div>
+        <div class="buttons-container">
+                {% if myPosts.has_previous %}
+                      <a href="?value={{category}}&page={{ myPosts.previous_page_number }}" class="next">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                           </svg>
+                      </a>
+                {% endif %}
+                {% if myPosts.has_next %}
+                      <a href="?value={{category}}&page={{ myPosts.next_page_number }}" class="prev">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                            </svg>
+                      </a>
+                {% endif %}
+        </div>
+<script type="module" src="{% static 'templates/Archive/Archive.js' %}"></script>
+</body>
+</html>

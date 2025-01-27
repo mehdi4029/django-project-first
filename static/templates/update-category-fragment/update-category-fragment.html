@@ -1,0 +1,12 @@
+<form method="post" action="/blog/updateCat/" id="update-category-form">
+     {% csrf_token %}
+     <label for="previously-name">نام فعلی کتگوری خود را انتخاب</label>
+     <select name="previously-name">
+          {% for i in allCategories %}
+              <option>{{i.name}}</option>
+          {% endfor %}
+     </select>
+     <label for="new-name">نام جدید کتگوری خود را وارد کنید</label>
+     <input name="new-name" type="text">
+     <input type="submit">
+</form>

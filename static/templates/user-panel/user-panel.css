@@ -1,0 +1,712 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border : none ;
+}
+.active {
+    color : white ;
+    background-color: darkslateblue;
+}
+@font-face {
+    font-family: "Dana-medium";
+    src: url('/static/media/fonts/Dana/woff2/DanaFaNum-Medium.woff2');
+}
+
+@font-face {
+    font-family: "Dana-bold";
+    src: url('/static/media/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2');
+}
+
+@font-face {
+    font-family: "Moraba-medium";
+    src: url('/static/media/fonts/Morabba/woff2/Morabba-Medium.woff2');
+}
+
+@font-face {
+    font-family: "Moraba-bold";
+    src: url('/static/media/fonts/Morabba/woff2/Morabba-Bold.woff2');
+}
+
+@media only screen and (min-width : 461px){
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .selection-bar {
+            margin-top: 40px;
+            width: 300px;
+            height: 80%;
+            border : 2px solid rgb(70, 75, 124) ;
+            color : rgb(178, 177, 188) ;
+            border-radius: 20px;
+            display: flex ;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        .user-info {
+            width: 70%;
+            height: 100px;
+            background-color: white;
+            box-shadow: 2px 2px 4px gray;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: -20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap : 20px ;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            color : darkslateblue ;
+        }
+        .user-info > .email {
+            font-size : 12px ;
+        }
+        
+        .user-access {
+            width: 100%;
+            height : 80% ;
+            padding : 0 20px ;
+            color : rgb(70, 75, 124) ;
+            display : flex ;
+            flex-direction: column;
+        }
+        
+        .user-access > .access {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            gap : 10px ;
+            align-items: center;
+            font-family: "Moraba-medium";
+            cursor: pointer;
+            border-bottom: 2px solid rgba(185, 182, 182, 0.4);
+        }
+        
+        .user-access > .access > svg {
+            width : 30px ;
+            height: 30px;
+            color : darkslateblue ;
+        }
+        .container {
+            width: 70%;
+            height: 600px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            /* background-color: blueviolet; */
+            border : 3px solid darkslateblue ;
+            overflow-y : scroll ;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        #create-post-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top : 80px ;
+            gap : 20px ;
+        }
+        #create-post-form > input,textarea,button,select {
+            width: 50%;
+            outline : none ;
+            padding : 8px ;
+            font-family: "Dana-bold";
+            font-size : 12px ;
+            border-radius: 20px;
+            border : darkslateblue 1px solid ;
+        }
+        label {
+            font-family: "Moraba-bold";
+        }
+        #all-categories-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding-top: 40px;
+        }
+        #div-to-delete-category {
+             width: 90%;
+             height: 70px;
+             border-radius: 20px;
+             border : darkslateblue 1px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "Dana-bold";
+         }
+
+         #div-to-delete-category > p {
+             font-size: 20px;
+             color : #807f7f;
+         }
+         #div-to-delete-category > a {
+             width: 20px;
+             height: 20px;
+             color: #981717;
+             cursor: pointer;
+         }
+         #update-category-form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+          }
+         #update-category-form > input {
+            border : darkslateblue 1px solid;
+            border-radius: 20px;
+            padding : 10px ;
+            font-family: "Moraba-bold";
+         }
+         #update-category-form > select {
+             padding: 10px;
+             font-family: "Moraba-bold";
+         }
+        #all-posts-container {
+             width: 100%;
+             height: 100%;
+             display: grid;
+             grid-template-columns : 80% ;
+             justify-content: center;
+             align-items: center;
+             padding: 20px 30px ;
+             grid-row-gap: 20px;
+             grid-column-gap: 40px;
+        }
+        #div-to-delete-post {
+            display: flex;
+            flex-direction: column;
+            gap : 20px ;
+            width: 280px;
+            height: auto;
+            border-radius: 20px;
+            padding : 10px 30px ;
+            border : darkslateblue 1px solid;
+            position: relative;
+        }
+        #div-to-delete-post > #post-title {
+            font-family: "Dana-bold";
+            font-size: 17px;
+            color : black ;
+            width: 100%;
+            height: 30%;
+            left: auto;
+        }
+        #div-to-delete-post > #post-description {
+            font-family: "Dana-Regular";
+            color : #808080 ;
+            font-size: 15px;
+            width: 100%;
+            height : 80% ;
+        }
+        #div-to-delete-post > #post-delete-tool {
+            color: #981717;
+            width: 20px;
+            height: 20px;
+        }
+       .comments-container {
+            width: 90%;
+            height: auto;
+            padding-bottom: 50px;
+            margin: auto;
+            display: flex ;
+            flex-direction: column;
+        }
+        .comment{
+            margin-top : 40px ;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            border-radius: 20px;
+            border : darkslateblue 1px solid;
+            padding : 30px ;
+            gap: 20px;
+        }
+        .comment-body {
+            height: 80%;
+            width: 100%;
+            font-family: "Dana-bold";
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .comment-details{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .comment-details > svg {
+            width: 30px;
+            height: 30px;
+            color : darkred;
+            cursor: pointer;
+        }
+ }
+
+ @media only screen and (min-width : 768px){
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .selection-bar {
+            margin-top: 40px;
+            width: 300px;
+            height: 80%;
+            border : 2px solid rgb(70, 75, 124) ;
+            color : rgb(178, 177, 188) ;
+            border-radius: 20px;
+            display: flex ;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        .user-info {
+            width: 70%;
+            height: 100px;
+            background-color: white;
+            box-shadow: 2px 2px 4px gray;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: -20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap : 20px ;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            color : darkslateblue ;
+        }
+        .user-info > .email {
+            font-size : 12px ;
+        }
+        
+        .user-access {
+            width: 100%;
+            height : 80% ;
+            padding : 0 20px ;
+            color : rgb(70, 75, 124) ;
+            display : flex ;
+            flex-direction: column;
+        }
+        
+        .user-access > .access {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            gap : 10px ;
+            align-items: center;
+            font-family: "Moraba-medium";
+            cursor: pointer;
+            border-bottom: 2px solid rgba(185, 182, 182, 0.4);
+        }
+        
+        .user-access > .access > svg {
+            width : 30px ;
+            height: 30px;
+            color : darkslateblue ;
+        }
+        .container {
+            width: 70%;
+            height: 600px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            /* background-color: blueviolet; */
+            border : 3px solid darkslateblue ;
+            overflow-y : scroll ;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        #create-post-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top : 80px ;
+            gap : 20px ;
+        }
+        #create-post-form > input,textarea,button,select {
+            width: 50%;
+            outline : none ;
+            padding : 8px ;
+            font-family: "Dana-bold";
+            font-size : 12px ;
+            border-radius: 20px;
+            border : darkslateblue 1px solid ;
+        }
+        #all-categories-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding-top: 40px;
+        }
+        #div-to-delete-category {
+             width: 90%;
+             height: 70px;
+             border-radius: 20px;
+             border : darkslateblue 1px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "Dana-bold";
+         }
+
+         #div-to-delete-category > p {
+             font-size: 20px;
+             color : #807f7f;
+         }
+         #div-to-delete-category > a{
+             width: 20px;
+             height: 20px;
+             color: #981717;
+             cursor: pointer;
+         }
+         #update-category-form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+          }
+         #update-category-form > input {
+            border : darkslateblue 1px solid;
+            border-radius: 20px;
+            padding : 10px ;
+            font-family: "Moraba-bold";
+         }
+         #update-category-form > select {
+             padding: 10px;
+             font-family: "Moraba-bold";
+         }
+        #all-posts-container {
+             width: 100%;
+             height: 100%;
+             display: grid;
+             grid-template-columns : 40% 40% ;
+             justify-content: center;
+             align-items: center;
+             padding: 20px 30px ;
+             grid-row-gap: 20px;
+             grid-column-gap: 40px;
+        }
+        #div-to-delete-post {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 200px;
+            height: auto;
+            border-radius: 20px;
+            padding : 10px 10px ;
+            border : darkslateblue 1px solid;
+            position: relative;
+        }
+        #div-to-delete-post > #post-title {
+            font-family: "Dana-bold";
+            font-size: 16px;
+            color : black ;
+            width: 100%;
+            height: 30%;
+            left: auto;
+        }
+        #div-to-delete-post > #post-description {
+            font-family: "Dana-Regular";
+            color : #808080 ;
+            font-size: 14px;
+            width: 100%;
+            height : 50% ;
+        }
+        #div-to-delete-post > #post-delete-tool {
+            color: #981717;
+            width: 20px;
+            height: 20px;
+        }
+        .comments-container {
+            width: 90%;
+            height: auto;
+            padding-bottom: 50px;
+            margin: auto;
+            display: flex ;
+            flex-direction: column;
+        }
+        .comment{
+            margin-top : 40px ;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            border-radius: 20px;
+            border : darkslateblue 1px solid;
+            padding : 30px ;
+            gap: 20px;
+        }
+        .comment-body {
+            height: 80%;
+            width: 100%;
+            font-family: "Dana-bold";
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .comment-details{
+            display: flex;
+            justify-content: space-between;
+            gap: 0;
+            flex-direction: row;
+            align-items: center;
+        }
+        .comment-details > svg {
+            width: 30px;
+            height: 30px;
+            color : darkred;
+            cursor: pointer;
+        }
+        .comment-details > p {
+            margin-right: -70px;
+        }
+
+ }
+    
+    @media only screen and (min-width : 1280px){
+    .selection-bar {
+        width: 300px;
+        height: 80%;
+        margin-top: 0;
+        position : absolute ;
+        top : 70px ;
+        right : 20px ;
+        border : 2px solid rgb(70, 75, 124) ;
+        /* background-image: linear-gradient(rgb(69, 69, 115) , rgb(68, 68, 89)); */
+        color : darkslateblue ;
+        border-radius: 20px;
+        display: flex ;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .user-info {
+        width: 70%;
+        height: 100px;
+        background-color: white;
+        box-shadow: 2px 2px 4px gray;
+        border-radius: 20px;
+        margin: auto;
+        margin-top: -20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap : 20px ;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        color : darkslateblue ;
+    }
+    .user-info > .email {
+        font-size : 12px ;
+    }
+    
+    .user-access {
+        width: 100%;
+        height : 80% ;
+        padding : 0 20px ;
+        display : flex ;
+        flex-direction: column;
+    }
+    
+    .user-access > .access {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        gap : 10px ;
+        align-items: center;
+        font-family: "Moraba-medium";
+        cursor: pointer;
+        border-bottom: 2px solid rgba(185, 182, 182, 0.4);
+    }
+    
+    .user-access > .access > svg {
+        width : 30px ;
+        height: 30px;
+        color : darkslateblue ;
+    }
+    .container {
+        margin-bottom: 0;
+        margin-top : 0 ;
+        width: 70%;
+        height: 600px;
+        margin-top: 60px ;
+        margin-right: 400px;
+        /* background-color: blueviolet; */
+        border : 3px solid darkslateblue ;
+        overflow-y : scroll ;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    #create-post-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top : 80px ;
+        gap : 20px ;
+    }
+    #create-post-form > input,textarea,button,select {
+        width: 50%;
+        outline : none ;
+        padding : 8px ;
+        font-family: "Dana-bold";
+        border-radius: 20px;
+        border : darkslateblue 1px solid ;
+    }
+    #all-categories-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 40px;
+    }
+    #div-to-delete-category {
+         width: 90%;
+         height: 70px;
+         border-radius: 20px;
+         border : darkslateblue 1px solid;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: "Dana-bold";
+    }
+
+    #div-to-delete-category > p {
+         font-size: 20px;
+        color : #807f7f;
+    }
+    #div-to-delete-category > a {
+        width: 20px;
+        height: 20px;
+        color: #981717;
+        cursor: pointer;
+    }
+    #update-category-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    #update-category-form > input {
+        border : darkslateblue 1px solid;
+        border-radius: 20px;
+        padding : 10px ;
+        font-family: "Moraba-bold";
+    }
+    #update-category-form > select {
+         padding: 10px;
+         font-family: "Moraba-bold";
+    }
+    #all-posts-container {
+         width: 100%;
+         height: 100%;
+         display: grid;
+         grid-template-columns : 30% 30% 33% ;
+         justify-content: center;
+         align-items: center;
+         padding: 20px 30px ;
+         grid-row-gap: 20px;
+         grid-column-gap: 40px;
+    }
+    #div-to-delete-post {
+        display: flex;
+        flex-direction: column;
+        gap : 30px ;
+        width: 280px;
+        height: auto;
+        border-radius: 20px;
+        padding : 10px 30px ;
+        border : darkslateblue 1px solid;
+        position: relative;
+    }
+    #div-to-delete-post > #post-title {
+        font-family: "Dana-bold";
+        font-size: 20px;
+        color : black ;
+        width: 100%;
+        height: 30%;
+        left: auto;
+    }
+    #div-to-delete-post > #post-description {
+        font-family: "Dana-Regular";
+        color : #808080 ;
+        font-size: 14px;
+        width: 100%;
+        height : 50% ;
+    }
+    #div-to-delete-post > #post-delete-tool {
+        color: #981717;
+        width: 20px;
+        height: 20px;
+    }
+    .comments-container {
+        width: 90%;
+        height: auto;
+        padding-bottom: 50px;
+        margin: auto;
+        display: flex ;
+        flex-direction: column;
+    }
+    .comment{
+        margin-top : 40px ;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+        border : darkslateblue 1px solid;
+        padding : 30px ;
+        gap: 20px;
+    }
+    .comment-body {
+        height: 80%;
+        width: 100%;
+        font-family: "Dana-bold";
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .comment-details{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .comment-details > svg {
+        width: 30px;
+        height: 30px;
+        color : darkred;
+        cursor: pointer;
+    }
+    .comment-details > p {
+        margin-right: -70px;
+    }
+}

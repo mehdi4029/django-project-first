@@ -1,0 +1,1068 @@
+*{
+    padding : 0 ;
+    margin : 0 ;
+    box-sizing: border-box;
+    border : none ;
+    outline : none ;
+}
+body{
+    height: 5000px;
+}
+
+@font-face {
+    font-family: "Dana-bold";
+    src: url("/static/media/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2");
+}
+@font-face {
+    font-family: "Dana-medium";
+    src: url("/static/media/fonts/Dana/woff2/DanaFaNum-Medium.woff2");
+}
+@font-face {
+    font-family: "Dana-regular";
+    src: url("/static/media/fonts/Dana/woff2/DanaFaNum-Regular.woff2");
+}
+@font-face {
+    font-family: "Moraba-medium";
+    src: url("/static/media/fonts/Morabba/woff2/Morabba-Medium.woff2");
+}
+@font-face {
+    font-family: "Moraba-bold";
+    src: url("/static/media/fonts/Morabba/woff2/Morabba-Bold.woff2");
+}
+@font-face {
+    font-family: "Moraba-light";
+    src: url("/static/media/fonts/Morabba/woff2/Morabba-Light.woff2");
+}
+
+@media only screen and (max-width : 480px){
+    .blur{
+         position: absolute;
+         width: 100%;
+         height: inherit ;
+         backdrop-filter: blur(8px);
+         visibility: hidden;
+         opacity: 0;
+         transition: all 0.4s ease-in;
+         background-color: rgba(255,255,255,0.5);
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+         width : 100% ;
+         top : 0px ;
+         height: 60px;
+         position : fixed ;
+         margin-right: auto;
+         background-color: rgb(50, 50, 126);
+         border-radius: 8px;
+         display: flex;
+         justify-content: space-between;
+         z-index: 1000;
+    }
+    nav > div {
+         width: 30%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         font-family:"Moraba-bold";
+         font-size: 18px;
+         transition: all 0.24s;
+         color : white ;
+    }
+    nav > div.Title > img {
+         display: none;
+    }
+    nav > div.Title > span {
+         display: inline-block;
+         margin-right: 5px;
+    }
+    nav > div.search-panel > input {
+        font-family: "Dana-Regular";
+        padding: 8px;
+        width: 50%;
+        height: 60%;
+        border-radius: 8px;
+    }
+        nav > div.search-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        padding-left: 8px;
+        gap : 16px ;
+    }
+    nav > div.search-panel > div.panel {
+        display: flex;
+        background-image: url('/static/media/images/icon-user.png');
+        background-position: center center;
+        background-size: 75% 75%;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: white;
+        cursor: pointer;
+    }
+    nav > .search-panel > input {
+        font-family: "Dana-Regular";
+        padding: 8px;
+        width: 200px;
+        height: 60%;
+        border-radius: 8px;
+    }
+    nav > div.search-panel > div.panel-select-box {
+        position: absolute;
+        top: 65px;
+        transition : all 0.4s ease-in;
+        left: 50px;
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        box-shadow: 1px 2px 4px black;
+        border-radius: 12px;
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    nav > div.search-panel > div.panel-select-box > div {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color : black ;
+        font-size: 17px;
+        gap : 10px ;
+        font-family : "Moraba-light" , sans-serif ;
+    }
+    nav > div.search-panel > div.panel-select-box > div > img {
+        height: 60%;
+    }
+    nav > div.search-panel > div.panel-select-box > div > a{
+        cursor: pointer ;
+    }
+    header {
+         width: 100%;
+         height: 600px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: rgb(53, 53, 81);
+         margin-top: 200px;
+         font-family: "Dana-medium" , "Moraba-bold";
+    }
+    header > div#icon-header {
+        display: none;
+    }
+    header > div#important-news {
+       width: 95%;
+       height: 100%;
+       padding-right: 40px;
+    }
+    header > div#important-news > p {
+         text-align: center;
+         font-size : 52px ;
+         margin-top: 40px;
+         color : white ;
+         font-family: "Moraba-bold";
+    }
+    header > div#important-news > div#important-news-container {
+        width: 90%;
+        height: 60%;
+        border-radius: 30px;
+        margin: auto;
+        margin-top: 80px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    header > div#important-news > div#important-news-container > new-section {
+        border-radius: 20px;
+        border: 1px solid darkblue;
+    }
+    header > div#important-news > div#important-news-container > a {
+        display: inline-block;
+    }
+    header > div#icon-header > svg {
+         width: 100%;
+         height: 100%;
+    }
+    #container {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        margin-top : 100px ;
+    }
+    new-cagegory > p {
+        padding-right: 30px;
+    }
+    new-category > #news-container {
+        border : 1px solid darkblue ;
+        width: 100%;
+        height: 80%;
+        border-radius: 20px;
+        background-color: rgb(53, 53, 81); 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    #see-all {
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        color : rgb(131, 131, 250) ;
+    }
+    new-section > img#new-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    new-section > #new-title {
+        margin-top: 8px;
+    }
+    new-section > span#date-text {
+        margin-top: 5px;
+    }
+        #search-result {
+        width: 250px;
+        height: 250px ;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px gray;
+        border: 1px solid black;
+        background-color: white;
+        position: absolute;
+        top :70px ;
+        left: 30px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: all 0.3s ease-in;
+        visibility: hidden;
+        opacity: 0;
+        padding: 20px 0px;
+    }
+    #search-result > div {
+        font-size: 13px;
+        font-family: "Dana-Regular";
+        width: 90%;
+        margin: auto;
+        height:80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color : black ;
+        padding :10px;
+        border-radius: 20px;
+        border-bottom:darkslateblue 1px solid ;
+    }
+    #search-result > div > a{
+        text-decoration: none;
+        color : black ;
+        cursor: pointer;
+        text-align: center;
+
+    }
+}
+
+
+@media only screen and (min-width : 481px){
+    .blur{
+         position: absolute;
+         width: 100%;
+         height: inherit ;
+         backdrop-filter: blur(8px);
+         visibility: hidden;
+         opacity: 0;
+         transition: all 0.4s ease-in;
+         background-color: rgba(255,255,255,0.5);
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+         width : 80% ; 
+         height: 60px;
+         position : fixed ;
+         margin-right: auto;
+         background-color: rgb(50, 50, 126);
+         border-radius: 8px;
+         transition : all 0.25s ;
+         left: 50%;
+         top: 25px;
+         transform: translateX(-50%);
+         display: flex;
+         justify-content: space-between;
+         z-index: 1000;
+    }
+    nav > div {
+         width: 30%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         font-family:"Moraba-bold";
+         font-size: 18px;
+         transition: all 0.24s;
+         color : white ;
+    }
+    nav > div > img {
+         width: 40%;
+         height: 60%;
+         transform: rotate(30deg);
+    }
+    nav > div > span {
+         display: inline-block;
+         margin-right: -5px;
+    }
+    nav > input {
+        font-family: "Dana-Regular";
+        padding: 8px;
+        width: 200px;
+        height: 60%;
+        margin : 10px 0px 20px 20px ;
+        border-radius: 8px;
+    }
+    nav > div.search-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        padding-left: 30px;
+        gap : 16px ;
+    }
+    nav > div.search-panel > div.panel {
+        display: flex;
+        background-image: url('/static/media/images/icon-user.png');
+        background-position: center center;
+        background-size: 75% 75%;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: white;
+        cursor: pointer;
+    }
+    nav > .search-panel > input {
+        font-family: "Dana-Regular";
+        padding: 8px;
+        width: 100px;
+        height: 60%;
+        border-radius: 8px;
+    }
+    nav > div.search-panel > div.panel-select-box {
+        position: absolute;
+        top: 65px;
+        transition : all 0.4s ease-in;
+        left: 140px;
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        box-shadow: 1px 2px 4px black;
+        border-radius: 12px;
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    nav > div.search-panel > div.panel-select-box > div {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color : black ;
+        font-size: 17px;
+        gap : 10px ;
+        font-family : "Moraba-light" , sans-serif ;
+    }
+    nav > div.search-panel > div.panel-select-box > div > img {
+        height: 60%;
+    }
+    nav > div.search-panel > div.panel-select-box > div > a{
+        cursor: pointer ;
+    }
+    nav.scrolled {
+        top : 0 ;
+        width: 100%;
+    }
+    nav.scrolled > div {
+        font-size: 20px;
+    }
+    
+    header {
+         width: 100%;
+         height: 600px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: rgb(53, 53, 81);
+         margin-top: 200px;
+         font-family: "Dana-medium" , "Moraba-bold";
+    }
+    header > div#icon-header {
+        display: none;
+    }
+    header > div#important-news {
+       width: 95%;
+       height: 100%;
+       padding-right: 40px;
+    }
+    header > div#important-news > p {
+         text-align: center;
+         font-size : 52px ;
+         margin-top: 40px;
+         color : white ;
+         font-family: "Moraba-bold";
+    }
+    header > div#important-news > div#important-news-container {
+        width: 90%;
+        height: 60%;
+        border-radius: 30px;
+        margin: auto;
+        margin-top: 80px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    header > div#important-news > div#important-news-container > new-section {
+        border-radius: 20px;
+        border: 1px solid darkblue;
+    }
+    header > div#important-news > div#important-news-container > a {
+        display: inline-block;
+    }
+    header > div#icon-header > svg {
+         width: 100%;
+         height: 100%;
+    }
+    #container {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        margin-top : 100px ;
+    }
+    new-cagegory > p {
+        padding-right: 30px;
+    }
+    new-category > #news-container {
+        border : 1px solid darkblue ;
+        width: 100%;
+        height: 80%;
+        border-radius: 20px;
+        background-color: rgb(53, 53, 81); 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    #see-all {
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        color : rgb(131, 131, 250) ;
+    }
+    new-section > img#new-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    new-section > #new-title {
+        margin-top: 8px;
+    }
+    new-section > span#date-text {
+        margin-top: 5px;
+    }
+    #search-result {
+        width: 400px;
+        height: 400px ;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px gray;
+        border: 1px solid black;
+        background-color: white;
+        position: absolute;
+        top :70px ;
+        left: 30px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: all 0.3s ease-in;
+        visibility: hidden;
+        opacity: 0;
+        padding: 20px 0px;
+    }
+    #search-result > div {
+        font-size: 15px;
+        font-family: "Dana-Regular";
+        width: 90%;
+        margin: auto;
+        height:80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color : black ;
+        padding :10px;
+        border-radius: 20px;
+        border-bottom:darkslateblue 1px solid ;
+    }
+    #search-result > div > a{
+        text-decoration: none;
+        color : black ;
+        cursor: pointer;
+        text-align: center;
+
+    }
+}
+
+@media only screen and (min-width : 769px){
+    .blur{
+     position: absolute;
+     width: 100%;
+     height: inherit ;
+     backdrop-filter: blur(8px);
+     visibility: hidden;
+     opacity: 0;
+    transition: all 0.4s ease-in;
+     background-color: rgba(255,255,255,0.5);
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+         width : 80% ; 
+         height: 60px;
+         position : fixed ;
+         margin-right: auto;
+         background-color: rgb(50, 50, 126);
+         border-radius: 8px;
+         transition : all 0.25s ;
+         left: 50%;
+         top: 25px;
+         transform: translateX(-50%);
+         display: flex;
+         justify-content: space-between;
+         z-index: 1000;
+    }
+    nav > div {
+         width: 30%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         font-family:"Moraba-bold";
+         font-size: 18px;
+         transition: all 0.24s;
+         color : white ;
+    }
+    nav > div.Title > img {
+         width: 30%;
+         height: 60%;
+         transform: rotate(30deg);
+    }
+    nav > div.Title > span {
+         display: inline-block;
+         margin-right: -5px;
+    }
+    nav > div.search-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        padding-left: 30px;
+        gap : 16px ;
+    }
+    nav > div.search-panel > div.panel {
+        display: flex;
+        background-image: url('/static/media/images/icon-user.png');
+        background-position: center center;
+        background-size: 75% 75%;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: white;
+        cursor: pointer;
+    }
+    nav > .search-panel > input {
+        font-family: "Dana-Regular";
+        padding: 8px;
+        width: 200px;
+        height: 60%;
+        border-radius: 8px;
+    }
+    nav > div.search-panel > div.panel-select-box {
+        position: absolute;
+        top: 65px;
+        transition : all 0.4s ease-in;
+        left: 240px;
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        box-shadow: 1px 2px 4px black;
+        border-radius: 12px;
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    nav > div.search-panel > div.panel-select-box > div {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color : black ;
+        font-size: 17px;
+        gap : 10px ;
+        font-family : "Moraba-light" , sans-serif ;
+    }
+    nav > div.search-panel > div.panel-select-box > div > img {
+        height: 60%;
+    }
+    nav > div.search-panel > div.panel-select-box > div > a{
+        cursor: pointer ;
+    }
+    nav.scrolled {
+        top : 0 ;
+        width: 100%;
+    }
+    nav.scrolled > div {
+        font-size: 20px;
+    }
+    
+    header {
+         width: 100%;
+         height: 600px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: rgb(53, 53, 81);
+         margin-top: 200px;
+         font-family: "Dana-medium" , "Moraba-bold";
+    }
+    header > div#icon-header {
+        display: none;
+    }
+    header > div#important-news {
+       width: 95%;
+       height: 100%;
+       padding-right: 40px;
+    }
+    header > div#important-news > p {
+         margin: auto;
+         font-size : 52px ;
+         margin-top: 40px;
+         color : white ;
+        font-family: "Moraba-bold" ;
+    }
+    header > div#important-news > div#important-news-container {
+        width: 90%;
+        height: 65%;
+        border-radius: 30px;
+        margin: auto;
+        margin-top: 80px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    header > div#important-news > div#important-news-container > new-section {
+        border-radius: 20px;
+        border : 1px solid darkblue;
+    }
+    header > div#important-news > div#important-news-container > a {
+        display: inline-block;
+    }
+    header > div#icon-header > svg {
+         width: 100%;
+         height: 100%;
+    }
+    #container {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        margin-top : 100px ;
+    }
+    new-cagegory > p {
+        padding-right: 30px;
+    }
+    new-category > #news-container {
+        border : 1px solid darkblue ;
+        width: 100%;
+        height: 80%;
+        border-radius: 20px;
+        background-color: rgb(53, 53, 81); 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap : 20px ;
+        overflow-x : scroll ;
+        padding: 0px 20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    #see-all {
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        color : rgb(131, 131, 250) ;
+    }
+    new-section > img#new-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    new-section > #new-title {
+        margin-top: 8px;
+        padding : 0px 8px ;
+    }
+    new-section > span#date-text {
+        margin-top: 5px;
+    }
+    #search-result {
+        width: 400px;
+        height: 400px ;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px gray;
+        border: 1px solid black;
+        background-color: white;
+        position: absolute;
+        top :70px ;
+        left: 30px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: all 0.3s ease-in;
+        visibility: hidden;
+        opacity: 0;
+        padding: 20px 0px;
+    }
+    #search-result > div {
+        font-size: 15px;
+        font-family: "Dana-Regular";
+        width: 90%;
+        margin: auto;
+        height:80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color : black ;
+        padding :10px;
+        border-radius: 20px;
+        border-bottom:darkslateblue 1px solid ;
+    }
+    #search-result > div > a{
+        text-decoration: none;
+        color : black ;
+        cursor: pointer;
+        text-align: center;
+
+    }
+}
+@media only screen and (min-width : 1280px){
+.blur{
+     position: absolute;
+     width: 100%;
+     height: inherit ;
+     backdrop-filter: blur(8px);
+     visibility: hidden;
+     opacity: 0;
+    transition: all 0.4s ease-in;
+     background-color: rgba(255,255,255,0.5);
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+nav{
+     width : 80% ; 
+     height: 60px;
+     position : fixed ;
+     margin-right: auto;
+     background-color: rgb(50, 50, 126);
+     border-radius: 8px;
+     transition : all 0.25s ;
+     left: 50%;
+     top: 25px;
+     transform: translateX(-50%);
+     display: flex;
+     justify-content: space-between;
+     z-index: 1000;
+}
+nav > div.Title {
+     width: 16%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     font-family:"Moraba-bold";
+     font-size: 18px;
+     transition: all 0.24s;
+     color : white ;
+}
+nav > div.Title > img {
+     width: 60%;
+     height: 60%;
+     transform: rotate(30deg);
+}
+nav > div.Title > span {
+     display: inline-block;
+     margin-right: -25px;
+}
+nav > div.search-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    padding-left: 30px;
+    gap : 16px ;
+}
+nav > div.search-panel > div.panel {
+    display: flex;
+    background-image: url('/static/media/images/icon-user.png');
+    background-position: center center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+nav > .search-panel > input {
+    font-family: "Dana-Regular";
+    padding: 8px;
+    width: 200px;
+    height: 60%;
+    border-radius: 8px;
+}
+nav > div.search-panel > div.panel-select-box {
+    position: absolute;
+    top: 65px;
+    transition : all 0.4s ease-in;
+    left: 240px;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 2px 4px black;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    padding: 0 10px;
+}
+nav > div.search-panel > div.panel-select-box > div {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color : black ;
+    font-size: 17px;
+    gap : 10px ;
+    font-family : "Moraba-light" , sans-serif ;
+}
+nav > div.search-panel > div.panel-select-box > div > img {
+    height: 60%;
+}
+nav > div.search-panel > div.panel-select-box > div > a{
+    cursor: pointer ;
+}
+nav.scrolled {
+    top : 0 ;
+    width: 100%;
+}
+nav.scrolled > div {
+    font-size: 20px;
+}
+
+header {
+     width: 100%;
+     height: 600px;
+     display: flex;
+     justify-content: space-between;
+     background-color: rgb(53, 53, 81);
+     margin-top: 200px;
+     font-family: "Dana-medium" , "Moraba-bold";
+}
+header > div#icon-header {
+    width: 40%;
+    height: 100%;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+header > div#important-news {
+   width: 60%;
+   height: 100%;
+   padding-right: 40px;
+}
+header > div#important-news > p {
+     text-align: start;
+     font-size : 52px ;
+     padding-right:30px ;
+     margin-top: 40px;
+     color : white ;
+     font-family: "Moraba-bold";
+}
+header > div#important-news > div#important-news-container {
+    width: 90%;
+    height: 70%;
+    border-radius: 30px;
+    margin-top: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap : 20px ;
+    overflow-x : scroll ;
+    padding: 0px 20px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+header > div#important-news > div#important-news-container > new-section {
+    border-radius: 20px;
+    border : 3px solid darkblue;
+}
+header > div#important-news > div#important-news-container > a {
+    display: inline-block;
+}
+header > div#icon-header > svg {
+     width: 100%;
+     height: 100%;
+}
+#container {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top : 100px ;
+}
+new-cagegory > p {
+    padding-right: 30px;
+}
+new-category > #news-container {
+    border: 1px solid darkblue;
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    background-color: rgb(53, 53, 81); 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap : 20px ;
+    overflow-x : scroll ;
+    padding: 0px 20px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+#see-all {
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    color : rgb(131, 131, 250) ;
+}
+new-section > img#new-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+new-section > #new-title {
+    margin-top: 8px;
+    padding: 0px 8px;
+}
+new-section > span#date-text {
+    margin-top: 5px;
+}
+#search-result {
+    width: 400px;
+    height: 400px ;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px gray;
+    border: 1px solid black;
+    background-color: white;
+    position: absolute;
+    top :70px ;
+    left: 30px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    padding: 20px 0px;
+}
+#search-result > div {
+    font-size: 15px;
+    font-family: "Dana-Regular";
+    width: 90%;
+    margin: auto;
+    height:80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : black ;
+    padding :10px;
+    border-radius: 20px;
+    border-bottom:darkslateblue 1px solid ;
+}
+#search-result > div > a{
+    text-decoration: none;
+    color : black ;
+    cursor: pointer;
+    text-align: center;
+
+}
+}
+

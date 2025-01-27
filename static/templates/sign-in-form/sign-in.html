@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'templates/sign-in-form/sign-in-style.css' %}" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="modal"></div>
+    <div class="login-page">
+        <div class="form">
+          <form action="../create/" method="post" id="sign-in-form" class="register-form" style="display: inline-block">
+              {% csrf_token %}
+            <input name="username" type="text" id="name-input" class="name-input" placeholder="name" required/>
+            <input name="password" id="password-input" type="password" class="password-input" placeholder="password" required/>
+            <input name="email" id="email-input" type="email" class="email-input" placeholder="email address" required/>
+            <button id="submit-btn">Create</button>
+          </form>
+        </div>
+      </div>
+
+
+<script src="{% static 'templates/sign-in-form/sign-in.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/templates/user-panel/user-panel.css' %}">
+    <link rel="icon" href="{% static "media/logo's/calendar.png " %}">
+    <link rel="stylesheet" href="{% static '/templates/user-panel/datePicker/datePicker.css' %}">
+    <title>Panel</title>
+</head>
+<body>
+    <!-- jalali-js CDN -->
+{#    <script src="https://cdn.jsdelivr.net/npm/jalaali-js@1.2.7/dist/jalaali.min.js"></script>#}
+
+    <div id="selection-bar" class="selection-bar">
+         <div class="user-info">
+               <p id="username"></p>
+               <p id="email" class="email"></p>
+         </div>
+         <div id="user-access" class="user-access">
+         </div>
+    </div>
+    <div id="container" class="container">
+    </div>
+
+    <script type="module" src="{% static 'templates/user-panel/user-panel.js' %}" defer></script>
+    <!-- date picker config -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static 'templates/user-panel/datePicker/persian-date-picker.js' %}"></script>
+    <script src="{% static 'templates/user-panel/datePicker/persian-date.js' %}"></script>
+</body>
+</html>
