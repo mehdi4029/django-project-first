@@ -60,7 +60,7 @@ TEMPLATES = [
         'DIRS': [
              os.path.join(BASE_DIR, 'static', 'templates', 'loginForm') ,  os.path.join(BASE_DIR, 'static', 'templates', 'user-panel') ,  os.path.join(BASE_DIR, 'static', 'templates', 'create-post-form-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'create-category-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'delete-category-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'update-category-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'delete-post-fragment') ,
             os.path.join(BASE_DIR, 'static', 'templates', 'manipulate-post-fragment')
-            ,  os.path.join(BASE_DIR, 'static', 'templates', 'manipulate-post-form-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'postDetailView') ,  os.path.join(BASE_DIR, 'static', 'templates', 'Archive') ,  os.path.join(BASE_DIR, 'static', 'templates', 'comments-list-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'search-post-fragment')
+            ,  os.path.join(BASE_DIR, 'static', 'templates', 'manipulate-post-form-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'postDetailView') ,  os.path.join(BASE_DIR, 'static', 'templates', 'Archive') ,  os.path.join(BASE_DIR, 'static', 'templates', 'comments-list-fragment') ,  os.path.join(BASE_DIR, 'static', 'templates', 'search-post-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'mainPage')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
