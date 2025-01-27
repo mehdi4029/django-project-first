@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -127,7 +128,7 @@ STATICFILES_DIRS = [
     , "static/templates/sign-in-form" , "static/templates/loginForm" , "static/templates/user-panel" , "static/templates/user-panel/datePicker" , "static/templates/create-post-form-fragment" , "static/templates/create-category-fragment" , "static/templates/delete-category-fragment"
     , "static/templates/update-category-fragment" , "static/templates/delete-post-fragment" , "static/templates/manipulate-post-fragment" , "static/templates/manipulate-post-form-fragment" , "static/templates/postDetailView" , "static/templates/Archive" , "static/templates/comments-list-fragment" , "static/templates/search-post-fragment"]
 
-STATIC_ROOT = '/static/ALL'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # or wherever you want to collect them
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
