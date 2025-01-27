@@ -125,10 +125,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static", "static/components/category" , "static/components/new" , "static/media/images" , "static/media/logo's" , "static/media/fonts/Dana/woff2" , "static/media/fonts/Morabba/woff2" , "static/templates/mainPage"
-    , "static/templates/sign-in-form" , "static/templates/loginForm" , "static/templates/user-panel" , "static/templates/user-panel/datePicker" , "static/templates/create-post-form-fragment" , "static/templates/create-category-fragment" , "static/templates/delete-category-fragment"
-    , "static/templates/update-category-fragment" , "static/templates/delete-post-fragment" , "static/templates/manipulate-post-fragment" , "static/templates/manipulate-post-form-fragment" , "static/templates/postDetailView" , "static/templates/Archive" , "static/templates/comments-list-fragment" , "static/templates/search-post-fragment"]
-
+    BASE_DIR / "static",  BASE_DIR / "static", os.path.join(BASE_DIR, 'static', 'components', 'category') , os.path.join(BASE_DIR, 'static', 'components', 'new') , os.path.join(BASE_DIR, 'static', 'media', 'images') , os.path.join(BASE_DIR, 'static', 'media', "logo's") , os.path.join(BASE_DIR, 'static', 'media', 'fonts' , 'Dana' , 'woff2') , os.path.join(BASE_DIR, 'static', 'media', 'fonts' , 'Morabba' , 'woff2') , os.path.join(BASE_DIR, 'static', 'templates', 'mainPage')
+    , os.path.join(BASE_DIR, 'static', 'templates', 'sign-in-form') , os.path.join(BASE_DIR, 'static', 'templates', 'loginForm') ,os.path.join(BASE_DIR, 'static', 'templates', 'user-panel'),os.path.join(BASE_DIR, 'static', 'templates', 'user-panel' , 'datePicker') , os.path.join(BASE_DIR, 'static', 'templates', 'create-post-form-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'create-category-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'delete-category-fragment')
+    , os.path.join(BASE_DIR, 'static', 'templates', 'update-category-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'delete-post-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'manipulate-post-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'manipulate-post-form-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'postDetailView') , os.path.join(BASE_DIR, 'static', 'templates', 'Archive') ,os.path.join(BASE_DIR, 'static', 'templates', 'comments-list-fragment') , os.path.join(BASE_DIR, 'static', 'templates', 'search-post-fragment')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # or wherever you want to collect them
 
 # Default primary key field type
